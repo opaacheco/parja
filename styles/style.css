@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-nono);
-  font-size: 100%;
+  box-sizing: border-box;
 }
 
 /* nav styles */
@@ -14,18 +14,19 @@ header {
   align-items: center;
   /*border-bottom: 2px solid #000000;*/
 }
+
 .logo-slogan {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 80%;
+  font-size: 15px;
 }
 
 .logo-slogan > img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 150px;
+  max-height: 150px;
   transform: rotatey(180deg);
 }
 
@@ -37,7 +38,7 @@ header > nav > ul > li > a {
   text-decoration: none;
   margin-right: 40px;
   text-transform: uppercase;
-  font-size: 80%;
+  font-size: 13px;
 }
 
 header > nav > ul > li {
@@ -47,7 +48,7 @@ header > nav > ul > li {
 /* fim nav styles */
 
 main {
-  margin-top: 40px;
+  margin-top: 25px;
   margin-bottom: 40px;
 }
 
@@ -58,17 +59,17 @@ main {
   justify-content: space-around;
   align-items: center;
   text-align: end;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .home-body > div,
 .imagem-main,
 .imagem-main > img {
-  width: 800px;
+  width: 600px;
 }
 
 .home-body p {
-  font-size: 80%;
+  font-size: 20px;
 }
 
 /* fim home styles */
@@ -112,6 +113,6 @@ footer > p {
 }
 
 .redes-sociais img {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 20px;
+  max-height: 20px;
 }
