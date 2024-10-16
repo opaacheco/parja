@@ -1,6 +1,10 @@
+@import "Root.css";
+
 * {
   margin: 0;
   padding: 0;
+  font-family: var(--font-nono);
+  font-size: 100%;
 }
 
 /* nav styles */
@@ -16,6 +20,7 @@ header {
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 80%;
 }
 
 .logo-slogan > img {
@@ -32,6 +37,7 @@ header > nav > ul > li > a {
   text-decoration: none;
   margin-right: 40px;
   text-transform: uppercase;
+  font-size: 80%;
 }
 
 header > nav > ul > li {
@@ -61,6 +67,10 @@ main {
   width: 800px;
 }
 
+.home-body p {
+  font-size: 80%;
+}
+
 /* fim home styles */
 
 /* sobre mim styles */
@@ -78,7 +88,7 @@ main {
 }
 
 footer > p {
-  font-size: 18px;
+  font-size: 80%;
   text-align: center;
 }
 
@@ -93,7 +103,7 @@ footer > p {
 
 .contatos > ul > li {
   margin-right: 40px;
-  font-size: 19px;
+  font-size: 80%;
   margin-bottom: 20px;
 }
 
