@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body{
+  overflow-y: auto;
+}
+
 /* nav styles */
 header {
   display: flex;
@@ -49,7 +53,7 @@ header > nav > ul > li {
 
 main {
   margin-top: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /* home styles */
