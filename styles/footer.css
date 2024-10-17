@@ -1,0 +1,34 @@
+@import "Root.css";
+
+footer {
+  margin-top: 80px;
+}
+
+footer > p {
+  font-size: 80%;
+  text-align: center;
+}
+
+.contatos {
+  display: flex;
+  justify-content: center;
+}
+
+.contatos > ul {
+  display: flex;
+}
+
+.contatos > ul > li {
+  margin: 10px;
+  font-size: 80%;
+  text-align: center;
+}
+
+.redes-sociais {
+  list-style: none;
+}
+
+.redes-sociais img {
+  max-width: 20px;
+  max-height: 20px;
+}
