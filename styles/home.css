@@ -1,0 +1,49 @@
+@import "Root.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-nono);
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: auto;
+}
+
+main {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+/* home styles */
+
+.home-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: end;
+  font-size: 20px;
+  background-image: url("../images/café_faixa.png");
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+  background-size: cover; /* Faz com que a imagem cubra todo o background */
+  background-position: center; /* Centraliza a imagem no corpo */
+  margin: 0;
+  padding: 0;
+  margin-top: 70px;
+}
+
+.home-body > div,
+.imagem-main,
+.imagem-main > img {
+  width: 400px;
+}
+
+.home-body p {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 18px;
+
+  text-align: center;
+  color: var(--pastel-color);
+}
