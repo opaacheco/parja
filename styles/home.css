@@ -25,9 +25,9 @@ main {
   text-align: end;
   font-size: 20px;
   background-image: url("../images/café_faixa.png");
-  background-repeat: no-repeat; /* Impede que a imagem se repita */
-  background-size: cover; /* Faz com que a imagem cubra todo o background */
-  background-position: center; /* Centraliza a imagem no corpo */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
   margin-top: 70px;
