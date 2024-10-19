@@ -52,8 +52,7 @@ header > nav > ul > li {
 /* fim nav styles */
 
 main {
-  margin-top: 25px;
-  margin-bottom: 50px;
+
 }
 
 /* home styles */
@@ -97,15 +96,18 @@ main {
   justify-content: center;
   text-align: center;
   columns: 1;
+  margin-top: 50px;
 }
 
 .main-sobre-nos p {
   width: 700px;
   font-size: 20px;
+  margin-top: 20px;
 }
 
 footer{
-  margin-top: 80px;
+  margin-top: 90px;
+  margin-bottom: 30px;
 }
 
 footer > p {
@@ -126,7 +128,6 @@ footer > p {
   margin: 10px;
   font-size: 80%;
   text-align: center;
-
 }
 
 .redes-sociais {
