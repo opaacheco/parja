@@ -1,0 +1,13 @@
+@import "Root.css";
+
+.main-sobre-nos {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  columns: 1;
+}
+
+.main-sobre-nos p {
+  width: 700px;
+  font-size: 20px;
+}
