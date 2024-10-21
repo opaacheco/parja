@@ -6,6 +6,7 @@ header {
   justify-content: space-between;
   align-items: center;
   /* border-bottom: 2px solid rgba(0, 0, 0, 0.3) */
+  font-family: var(--font-nono);
 }
 
 .logo-slogan {
@@ -25,7 +26,7 @@ header {
 
 .opcoes {
   display: flex;
-  margin-right: 20px;
+  margin-right: 80px;
 }
 
 header > div > nav > ul {
@@ -43,39 +44,43 @@ header > div > nav > ul > li {
   list-style: none;
 }
 
-.hamburguer {
-  background: none;
-  border: none;
-  border-top: 3px solid #000;
-  cursor: pointer;
-  width: 30px;
+#menu-hidde {
+  display: none;
+  text-transform: uppercase;
 }
 
-.hamburguer::before,
-.hamburguer::after {
-  content: " ";
-  display: block;
-  width: 30px;
-  height: 3px;
-  background: #000;
-  margin-top: 5px;
-}
-
-.nav-hidde > li > a,
-.nav-show,
-.nav-show > li > a {
-  list-style: none;
-  text-decoration: none;
+#menu-hidde > ul,
+a {
   list-style-type: none;
+  text-decoration: none;
+}
+
+#menu-hidde > ul > li {
+  padding-top: 5px;
+  border-bottom: 1px solid #000;
+}
+
+i#hamburguer {
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+
+#hamburguer:hover + #menu-hidde {
+  display: block;
+}
+
+#menu-hidde:hover {
+  display: block;
 }
 
 .nav-hidde {
-  max-height: 0;
-  overflow: hidden;
-  transition: 1s ease-in-out;
+  position: absolute;
+  right: 10px;
+  top: 90px;
 }
 
-.nav-show {
-  height: 200px;
-  position: absolute;
+.menu-obscuro {
+  display: flex;
+  flex-direction: column;
 }

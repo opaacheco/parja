@@ -1,7 +1,9 @@
-const hamburguer = document.querySelector(".hamburguer");
-const menu = document.querySelector(".nav-hidde");
-
-hamburguer.addEventListener("click", () => {
-  menu.classList.toggle("nav-show");
-  menu.classList.toggle("nav-hidde");
-});
+/*function comutarMenu() {
+  let listElement = document.getElementById("menu-hidde");
+  if (listElement.style.display == "none") {
+    listElement.style.display = "block";
+  } else {
+    listElement.style.display = "none";
+  }
+}
+*/
