@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/home.css" />
@@ -16,25 +20,29 @@
   <body>
     <header>
       <div class="logo-slogan">
-        <img src="images/logo.png" alt="" />
+        <img src="../images/logo.png" alt="" />
         <p>o som que atrai e o sabor que conquista</p>
       </div>
       <div class="opcoes">
         <nav>
           <ul>
             <li><a href="">home</a></li>
-            <li><a href="/pages/sobre-nos.html">sobre nós</a></li>
+            <li><a href="./pages/sobre-nos.html">sobre nós</a></li>
             <li><a href="">nosso menu</a></li>
             <li><a href="">nossa playlist</a></li>
           </ul>
         </nav>
-        <div>
-          <button class="hamburguer"></button>
-          <ul class="nav-hidde">
-            <li><a href="">topico1</a></li>
-            <li><a href="">topico1</a></li>
-            <li><a href="">topico1</a></li>
-          </ul>
+        <div class="menu-obscuro">
+          <i onclick="comutarMenu()" id="hamburguer" class="material-icons"
+            >menu</i
+          >
+          <div id="menu-hidde">
+            <ul class="nav-hidde">
+              <li><a href="">topico1</a></li>
+              <li><a href="">topico1</a></li>
+              <li><a href="">topico1</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
