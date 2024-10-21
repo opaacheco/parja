@@ -1,4 +1,4 @@
-/*function comutarMenu() {
+function comutarMenu() {
   let listElement = document.getElementById("menu-hidde");
   if (listElement.style.display == "none") {
     listElement.style.display = "block";
@@ -6,4 +6,4 @@
     listElement.style.display = "none";
   }
 }
-*/
+

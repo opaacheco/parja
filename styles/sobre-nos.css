@@ -1,7 +1,11 @@
 @import "Root.css";
 
+body {
+  overflow-y: auto;
+}
+
 .main-sobre-nos {
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -11,5 +15,5 @@
 .main-sobre-nos p {
   width: 700px;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
