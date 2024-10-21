@@ -1,6 +1,7 @@
 @import "Root.css";
 
 .main-sobre-nos {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -10,4 +11,5 @@
 .main-sobre-nos p {
   width: 700px;
   font-size: 20px;
+  margin-top: 10px;
 }
