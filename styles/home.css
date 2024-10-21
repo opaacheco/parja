@@ -5,16 +5,66 @@
   padding: 0;
   font-family: var(--font-nono);
   box-sizing: border-box;
+  color: white;
+  z-index: 2;
 }
 
 body {
   overflow-y: auto;
+  background-image: url('../images/coffeeShopAesthetic.jpg');
+  background-repeat: no-repeat;
+  height: 76.2vh;
+  background-size: cover;
+  background-position: center;
 }
 
 main {
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin-top: 5px;
 }
+
+.hero {
+  padding: 100px 20px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 150px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background: orange;
+  margin-left: 150px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
 
 /* home styles */
 
@@ -31,6 +81,10 @@ main {
   margin: 0;
   padding: 0;
   margin-top: 70px;
+}
+
+.margin-test{
+  margin-left: 9px;
 }
 
 .home-body > div,
