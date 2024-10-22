@@ -28,20 +28,22 @@ header {
   margin: 20px;
 }
 
+.linha {
+  height: 1px; /* Espessura da linha */
+  background-color: #ffffff; /* Cor da linha */
+  margin-top: 10px;
+  width: 94%;
+}
+
 .opcoes {
   display: flex;
   margin-right: 80px;
 }
 
-.linha {
-  height: 1px; /* Espessura da linha */
-  background-color: #ffffff; /* Cor da linha */
-  margin-top: 10px;
-  width: 115%;
-}
-
 header > div > nav > ul {
   display: flex;
+  align-items: center;
+  padding-left: 6px;
 }
 
 header > div > nav > ul > li > a {
