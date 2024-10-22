@@ -66,15 +66,38 @@ header > div > nav > ul > li {
 a {
   list-style-type: none;
   text-decoration: none;
+  cursor: pointer;
+}
+
+#menu-hidde > ul > li > a {
+  color: #000;
+  transition: 1s ease-in-out;
+}
+
+#menu-hidde > ul {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #menu-hidde > ul > li {
-  padding-top: 5px;
+  width: 200px;
+  height: 90px;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 20px;
+  transition: 1s ease-out;
+}
+
+#menu-hidde > ul > li:hover {
+  background: gray;
 }
 
 i#hamburguer {
   position: absolute;
-  right: 30px;
+  right: 45px;
+  display: block;
   cursor: pointer;
 }
 
@@ -88,11 +111,19 @@ i#hamburguer {
 
 .nav-hidde {
   position: absolute;
-  right: 10px;
-  top: 90px;
+  right: 0;
+  top: 110px;
+  width: 200px;
+  height: 84.6vh;
 }
 
 .menu-obscuro {
   display: flex;
   flex-direction: column;
+}
+
+#flecha {
+  position: absolute;
+  left: 5px;
+  color: #fff;
 }
