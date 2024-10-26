@@ -1,6 +1,14 @@
 @import "Root.css";
 
+p{
+    margin-left: 15px;
+}
+
 .main-topicoUm{
     margin: 20px;
+}
+
+.explicacaoEmpresa{
+    text-align: center;
 }
 
