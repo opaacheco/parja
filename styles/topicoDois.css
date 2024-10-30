@@ -43,6 +43,7 @@ h2 {
 }
 
 .opcao-hide {
+  margin: 15px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -52,5 +53,9 @@ h2 {
 }
 
 .forca-explicacao {
+  display: none;
+}
+
+.explicacao-fraqueza {
   display: none;
 }
