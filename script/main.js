@@ -7,3 +7,14 @@ function comutarMenu() {
   }
 }
 
+function openOpcao() {
+  let opcaoElement = document.getElementById("flecha-forca");
+  let explicacaoElemente = document.getElementById("explicacao-forca");
+  if (opcaoElement.innerHTML == "arrow_forward") {
+    opcaoElement.innerHTML = "arrow_downward";
+    explicacaoElemente.style.display = "block";
+  } else {
+    opcaoElement.innerHTML = "arrow_forward";
+    explicacaoElemente.style.display = "none";
+  }
+}

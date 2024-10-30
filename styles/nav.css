@@ -18,6 +18,11 @@ header {
   font-size: 15px;
 }
 
+.logo-slogan > h1 {
+  margin-right: 15px;
+  color: var(--bordo-claro-color);
+}
+
 .logo-slogan > img {
   max-width: 150px;
   max-height: 150px;
