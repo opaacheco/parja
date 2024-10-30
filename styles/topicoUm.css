@@ -1,14 +1,19 @@
 @import "Root.css";
 
-p{
-    margin-left: 15px;
+p {
+  margin-left: 15px;
 }
 
-.main-topicoUm{
-    margin: 20px;
+.main-topicoUm {
+  margin: 20px;
 }
 
-.explicacaoEmpresa{
-    text-align: center;
+.explicacaoEmpresa {
+  text-align: center;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
