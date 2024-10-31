@@ -35,3 +35,33 @@ footer > p {
   max-width: 20px;
   max-height: 20px;
 }
+
+@media (max-width: 915px) {
+  footer {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  footer > p {
+    font-size: 80%;
+    text-align: center;
+  }
+
+  .contatos {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contatos > ul {
+    display: block;
+  }
+
+  .contatos > ul > li {
+    margin: 10px;
+    font-size: 80%;
+    text-align: center;
+    list-style: none;
+  }
+}
