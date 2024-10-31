@@ -5,8 +5,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.5); */
-  font-family: var(--font-nono);
 }
 
 .logo-slogan {
@@ -132,22 +130,41 @@ i#hamburguer {
   color: #fff;
 }
 
+.show-movel {
+  display: none;
+}
+
 /*para telemovel*/
 
 @media (max-width: 915px) {
   header {
     display: flex;
     flex-direction: column;
-    /* border-bottom: 2px solid rgba(255, 255, 255, 0.5); */
-    font-family: var(--font-nono);
+  }
+
+  .logo-slogan {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .logo-slogan > h1 {
+    margin: 0;
   }
 
   .logo-slogan > p {
     display: none;
   }
+
   header > div > nav > ul {
     display: none;
   }
+
+  .show-movel {
+    display: block;
+  }
+
   i#hamburguer {
     position: absolute;
     right: 47%;
@@ -156,6 +173,7 @@ i#hamburguer {
   #menu-hidde:hover {
     display: block;
   }
+
   #menu-hidde {
     display: none;
     text-transform: uppercase;
@@ -163,7 +181,7 @@ i#hamburguer {
   .nav-hidde {
     position: absolute;
     right: 0;
-    top: 220px;
+    top: 250px;
     width: 100%;
     height: 84.6vh;
   }

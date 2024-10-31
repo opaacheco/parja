@@ -1,24 +1,41 @@
 @import "Root.css";
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   overflow-y: auto;
+  background-color: #f9f9f9;
 }
 
 .main-sobre-nos {
+  width: 1100px;
+  margin: auto;
   margin-top: 5px;
   display: flex;
   justify-content: center;
   text-align: center;
   columns: 1;
+  background-color: #fff;
+  padding-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 .main-sobre-nos p {
   width: 700px;
   font-size: 20px;
   margin-top: 5px;
+}
+
+@media (max-width: 915px) {
+  .main-sobre-nos {
+    max-width: 380px;
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .main-sobre-nos p {
+    width: 350px;
+    text-align: justify;
+    font-size: 15px;
+    margin-top: 5px;
+  }
 }
