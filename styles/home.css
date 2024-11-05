@@ -61,7 +61,7 @@ main {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   z-index: 2;
 }
 
@@ -102,27 +102,24 @@ main {
 
 @media (max-width: 915px) {
   .hero button {
-    margin-top: 7px;
-    margin-left: 20px;
+    margin: 140px 0 0 10px;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    position: static;
+    position: absolute;
   }
   .hero h1 {
-    position: static;
+    position: absolute;
     color: #fff;
     font-size: 50px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 0 0 0 5px;
   }
 
   .hero p {
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    position: static;
+    margin: 70px 0 10px 10px;
+    position: absolute;
   }
 
   .logo-slogan > h1 {
