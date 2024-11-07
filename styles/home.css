@@ -33,7 +33,7 @@ main {
   right: 0;
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero h1 {
@@ -55,7 +55,7 @@ main {
 .hero button {
   padding: 10px 20px;
   font-size: 20px;
-  background: var(--pastel-color);
+  background: var(--bordo-claro-color);
   margin-left: 150px;
   color: white;
   border-radius: 5px;
