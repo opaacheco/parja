@@ -25,6 +25,13 @@ main {
   padding: 5% 1%;
 }
 
+header h1,
+header p,
+header a,
+#hamburguer {
+  color: #fff;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -42,6 +49,7 @@ main {
   margin-left: 150px;
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
 .hero p {
@@ -50,6 +58,7 @@ main {
   margin-left: 150px;
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
 .hero button {
