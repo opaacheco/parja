@@ -40,7 +40,7 @@ header a,
   right: 0;
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero h1 {
@@ -64,13 +64,13 @@ header a,
 .hero button {
   padding: 10px 20px;
   font-size: 20px;
-  background: var(--pastel-color);
+  background: var(--bordo-claro-color);
   margin-left: 150px;
   color: white;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   z-index: 2;
 }
 
@@ -111,27 +111,24 @@ header a,
 
 @media (max-width: 915px) {
   .hero button {
-    margin-top: 7px;
-    margin-left: 20px;
+    margin: 140px 0 0 10px;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    position: static;
+    position: absolute;
   }
   .hero h1 {
-    position: static;
+    position: absolute;
     color: #fff;
     font-size: 50px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 0 0 0 5px;
   }
 
   .hero p {
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    position: static;
+    margin: 70px 0 10px 10px;
+    position: absolute;
   }
 
   .logo-slogan > h1 {

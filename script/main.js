@@ -1,9 +1,18 @@
 function comutarMenu() {
   let listElement = document.getElementById("menu-hidde");
+  let buttonHome = document.getElementById("btn")
+  let humHome = document.getElementById("hum")
+  let pHome = document.getElementById("p")
   if (listElement.style.display == "none") {
     listElement.style.display = "block";
+    buttonHome.style.position = "static"
+    humHome.style.position = "static"
+    pHome.style.position = "static"
   } else {
     listElement.style.display = "none";
+    buttonHome.style.position = "absolute"
+    humHome.style.position = "absolute"
+    pHome.style.position = "absolute"
   }
 }
 

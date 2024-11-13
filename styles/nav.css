@@ -18,6 +18,7 @@ header {
 
 .logo-slogan > h1 {
   margin-right: 15px;
+  color: var(--pastel-color);
 }
 
 .logo-slogan > img {
