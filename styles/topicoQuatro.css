@@ -1,12 +1,37 @@
 @import "Root.css";
 
-video {
+main > h1 {
+  margin-bottom: 70px;
+}
+
+main > h2 {
+  margin-bottom: 25px;
+}
+
+main > video {
   width: 500px;
-  height: 500px;
+  border-radius: 15px;
+  margin-bottom: 60px;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 915px) {
+  main > h1 {
+    margin: 50px;
+  }
+
+  main > h2 {
+    margin-bottom: 25px;
+  }
+
+  main > video {
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 60px;
+  }
 }

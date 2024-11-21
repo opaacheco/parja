@@ -154,6 +154,11 @@ i#hamburguer {
     display: none;
   }
 
+  #menu-hidde > ul > li > a {
+    min-width: 450px;
+    line-height: 61px;
+  }
+
   .show-movel {
     display: block;
   }
