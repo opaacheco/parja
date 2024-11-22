@@ -57,7 +57,6 @@ header > div > nav > ul > li > a {
 
 header > div > nav > ul > li {
   list-style: none;
-  background-color: #fff;
 }
 
 #menu-hidde {
@@ -70,7 +69,6 @@ a {
   list-style-type: none;
   text-decoration: none;
   cursor: pointer;
-  background-color: #fff;
 }
 
 #menu-hidde > ul > li > a {
@@ -111,7 +109,7 @@ i#hamburguer {
   right: 0;
   top: 110px;
   width: 200px;
-  height: 84.6vh;
+  height: auto;
 }
 
 .menu-obscuro {
