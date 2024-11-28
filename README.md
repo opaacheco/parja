@@ -1,7 +1,8 @@
+
 # PARJA - Website
 
 Bem-vindo ao repositório do site institucional da **PARJA**!  
-Este projeto apresenta o site oficial da nossa cafeteria, que oferece um ambiente acolhedor para desfrutar de ótimos cafés e jazz para aproveitar o momento.
+Este projeto apresenta o site oficial da nossa cafetaria, que oferece um ambiente acolhedor para desfrutar de ótimos cafés e jazz para aproveitar o momento.
 
 ## Tabela de Conteúdos
 
@@ -17,10 +18,10 @@ O site foi desenvolvido para:
 
 ## Funcionalidades
 
-- **Página inicial:** Destaques da cafeteria e promoções.
+- **Página inicial:** Destaques da cafetaria e promoções.
 - **Menu:** Lista de bebidas, comidas e acessórios com descrições e preços.
 - **Página de Contato:** Formulário para contato e mapa com localização.
-- **Playlist:** Nossa playlist direto do spotify para demonstrar o jazz que toca na loja fisica.
+- **Playlist:** Playlist do spotify para demonstrar a musica tocada na cafetaria.
 - **Responsividade:** Design otimizado para desktop e dispositivos móveis.
 
 ## Tecnologias Utilizadas
@@ -31,4 +32,6 @@ O site foi desenvolvido para:
 - **PHP** para os servidor:
 
 1. Link do site:
-   http://parja.rf.gd/parja/pages/home.html
+   http://parja.rf.gd/parja/pages/home.html  
+2. Link da nossa playlist:
+   [http://parja.rf.gd/parja/pages/playlist.html](https://open.spotify.com/playlist/0q1M2aOPIVUkc0kfpnweOn?)
