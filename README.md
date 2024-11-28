@@ -1,4 +1,4 @@
-# Café & Loja - Website Institucional
+# PARJA - Website
 
 Bem-vindo ao repositório do site institucional da **PARJA**!  
 Este projeto apresenta o site oficial da nossa cafeteria, que oferece um ambiente acolhedor para desfrutar de ótimos cafés e jazz para aproveitar o momento.
