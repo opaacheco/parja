@@ -30,9 +30,5 @@ O site foi desenvolvido para:
 - **JavaScript** para interatividade.
 - **PHP** para os servidor:
 
-## Instalação
-
-Se quiser rodar o projeto localmente, siga os passos abaixo:
-
 1. Link do site:
    http://parja.rf.gd/parja/pages/home.html
