@@ -1,0 +1,117 @@
+@import "Root.css";
+
+body {
+  background-color: #f9f9f9;
+}
+
+.main-menu {
+  text-align: center;
+  background-color: #fff;
+  width: 1400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produtos > div {
+  background-color: var(--pastel-color);
+  width: 300px;
+  margin: 20px;
+  transition: 0.5s;
+}
+
+.produtos h1 {
+  color: var(--bordo-claro-color);
+}
+
+.produtos h2 {
+  color: var(--bordo-claro-color);
+}
+
+.produtos button {
+  background-color: var(--bordo-claro-color);
+  width: 200px;
+  color: var(--pastel-color);
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.formContainer > h1 {
+  background-color: #fff;
+}
+
+.formContainer > form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+}
+
+.formContainer > form > input {
+  width: 300px;
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+.formContainer > form > button {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 915px) {
+  .main-menu {
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .produtos > div {
+    background-color: var(--pastel-color);
+    width: 300px;
+    margin: 20px;
+    transition: 0.5s;
+  }
+
+  .produtos button {
+    background-color: var(--bordo-claro-color);
+    width: 200px;
+    color: var(--pastel-color);
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .formContainer > form > input {
+    width: 200px;
+    height: 35px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    text-align: center;
+  }
+
+  .formContainer > form > button {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+}
