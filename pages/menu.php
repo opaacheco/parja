@@ -5,6 +5,7 @@ $username = "root";
 $password = "root";
 $dbname = "lolja"; 
 
+
 $email = "";
 $typePage = "";
 
@@ -79,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $stmt = mysqli_prepare($conn, "INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, ?)");
   $tipo_usuario = 'usuario'; 
   mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $password, $tipo_usuario);
+  mysqli_stmt_execute($stmt);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -86,12 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $typePage = 'register';
   } elseif (isset($_POST['email'])) {
       $email = $_POST['email'];
-
       $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
       mysqli_stmt_bind_param($stmt, "s", $email);
       mysqli_stmt_execute($stmt);
       $resultatoUser = mysqli_stmt_get_result($stmt);
-
       if (mysqli_num_rows($resultatoUser) > 0) {
       } else {
         header("Location: menu.php");
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/menu.css" />
-    <title>Tópico 1</title>
+    <title>Menu</title>
   </head>
 
   <body>
