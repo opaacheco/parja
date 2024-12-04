@@ -170,10 +170,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="./topicoSeis.html">Tópico 6</a>
               </li>
               <li>
-                <a href="">Tópico 7</a>
+                <a href="./topicoSete.html">Tópico 7</a>
               </li>
               <li>
-                <a href="">Tópico 8</a>
+                <a href="./topicoOito.html">Tópico 8</a>
               </li>
             </ul>
           </div>
