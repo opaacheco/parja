@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root"; 
 $password = "root123";
-$dbname = "lolja"; 
+$dbname = "parja"; 
 
 
 $email = "";
@@ -16,14 +16,26 @@ $password = "6XXxkI87k6HHkv";
 $dbname = "if0_37797726_parjadb"; 
 */
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-if (!$conn) {
-    die("Conexão falhou: " . mysqli_connect_error());
+// if (!$conn) {
+//     die("Conexão falhou: " . mysqli_connect_error());
+// }
+
+// $sql = "SELECT id, nome, preco, foto_url FROM produtos";
+// $result = mysqli_query($conn, $sql);
+
+try {
+  $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Modo de erros
+} catch (PDOException $e) {
+  die("Erro ao conectar ao banco de dados: " . $e->getMessage());
 }
 
+// isto é para consultar para obter produtos
 $sql = "SELECT id, nome, preco, foto_url FROM produtos";
-$result = mysqli_query($conn, $sql);
+$stmt = $pdo->query($sql);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 function displayNoAuthPage(){
   echo <<<HTML
@@ -51,13 +63,21 @@ function displayRegister(){
   HTML;
 }
 
+// function displayProdutos($result) {
+//   if (mysqli_num_rows($result) > 0) {
+//     while ($row = mysqli_fetch_assoc($result)) {
+//       $id = $row["id"];
+//             $nome = htmlspecialchars($row["nome"]);
+//             $fotoUrl = htmlspecialchars($row["foto_url"]);
+//             $preco = htmlspecialchars($row["preco"]);
+
 function displayProdutos($result) {
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
+  if (count($result) > 0) {
+    foreach ($result as $row) {
       $id = $row["id"];
-            $nome = htmlspecialchars($row["nome"]);
-            $fotoUrl = htmlspecialchars($row["foto_url"]);
-            $preco = htmlspecialchars($row["preco"]);
+      $nome = htmlspecialchars($row["nome"]);
+      $fotoUrl = htmlspecialchars($row["foto_url"]);
+      $preco = htmlspecialchars($row["preco"]);
 
       echo <<<HTML
         <div class='produto' onclick="window.location.href='detalhes_produto.php?id=$id'">
@@ -79,37 +99,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $email = $_POST['email'];
   $password = $_POST['password']; 
 
-  $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
-  mysqli_stmt_bind_param($stmt, "s", $email);
-  mysqli_stmt_execute($stmt);
-  $resultatoUser = mysqli_stmt_get_result($stmt);
+  // $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
+  // mysqli_stmt_bind_param($stmt, "s", $email);
+  // mysqli_stmt_execute($stmt);
+  // $resultatoUser = mysqli_stmt_get_result($stmt);
 
-  if (mysqli_num_rows($resultatoUser) > 0) {
+ // if (mysqli_num_rows($resultatoUser) > 0) {
+  //   header("Location: menu.php");
+  //   exit;
+  // }
+
+//  $stmt = mysqli_prepare($conn, "INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, ?)");
+//   $tipo_usuario = 'usuario'; 
+//   mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $password, $tipo_usuario);
+//   mysqli_stmt_execute($stmt);
+// }
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//   if (isset($_POST['registar'])) {
+//       $typePage = 'register';
+//   } elseif (isset($_POST['email'])) {
+//       $email = $_POST['email'];
+//       $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
+//       mysqli_stmt_bind_param($stmt, "s", $email);
+//       mysqli_stmt_execute($stmt);
+//       $resultatoUser = mysqli_stmt_get_result($stmt);
+//       if (mysqli_num_rows($resultatoUser) > 0) {
+//         $typePage = 'produtos';
+//       } else {
+//         header("Location: menu.php");
+//         exit;
+//       }
+//   }
+// }
+
+// vê se o uzuário já existe
+  $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
+  $stmt->bindParam(':email', $email);
+  $stmt->execute();
+  $resultatoUser = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if ($resultatoUser) {
     header("Location: menu.php");
     exit;
   }
 
-  $stmt = mysqli_prepare($conn, "INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, ?)");
-  $tipo_usuario = 'usuario'; 
-  mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $password, $tipo_usuario);
-  mysqli_stmt_execute($stmt);
+  // insere um novo usuario
+  $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (:nome, :email, :senha, :tipo_usuario)");
+  $tipo_usuario = 'usuario';
+  $stmt->bindParam(':nome', $name);
+  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':senha', $password);
+  $stmt->bindParam(':tipo_usuario', $tipo_usuario);
+  $stmt->execute();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['registar'])) {
-      $typePage = 'register';
+    $typePage = 'register';
   } elseif (isset($_POST['email'])) {
-      $email = $_POST['email'];
-      $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
-      mysqli_stmt_bind_param($stmt, "s", $email);
-      mysqli_stmt_execute($stmt);
-      $resultatoUser = mysqli_stmt_get_result($stmt);
-      if (mysqli_num_rows($resultatoUser) > 0) {
-        $typePage = 'produtos';
-      } else {
-        header("Location: menu.php");
-        exit;
-      }
+    $email = $_POST['email'];
+    $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $resultatoUser = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($resultatoUser) {
+      $typePage = 'produtos';
+    } else {
+      header("Location: menu.php");
+      exit;
+    }
   }
 }
 
