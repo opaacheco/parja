@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root"; 
-$password = "root";
-$dbname = "lolja"; 
+$password = "root123";
+$dbname = "parja"; 
 
 
 $email = "";
@@ -16,36 +16,77 @@ $password = "6XXxkI87k6HHkv";
 $dbname = "if0_37797726_parjadb"; 
 */
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-if (!$conn) {
-    die("Conexão falhou: " . mysqli_connect_error());
+// if (!$conn) {
+//     die("Conexão falhou: " . mysqli_connect_error());
+// }
+
+// if (isset($_GET['id'])) {
+//     $produto_id = $_GET['id'];
+// } else {
+//     echo "ID não fornecido.";
+// }
+
+// echo "<pre>$produto_id</pre>";
+
+// function displayOneProduto($conn, $produto_id){
+//     $stmt = mysqli_prepare($conn, "SELECT id, nome, preco, foto_url FROM produtos WHERE id = ?");
+//     mysqli_stmt_bind_param($stmt, "i", $produto_id);
+//     mysqli_stmt_execute($stmt);
+//     $result = mysqli_stmt_get_result($stmt);
+//     $row = mysqli_fetch_assoc($result);
+//     if($row){
+//         echo "<div>";
+//         echo "<h1>" . $row["nome"] . "</h1>";
+//         echo "<img src='../".$row["foto_url"]."' alt='Imagem do Produto' width='200'/><br>";
+//         echo "<input type='hidden' name='". $row["preco"]."'>";
+//         echo "<h2>€" . $row["preco"]."</h2>";
+//         echo "<button>adicionar</button>";
+//         echo "</div>";   
+//     }
+ 
+// }
+
+try {
+    // cria a conexão usando pdo
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Modo de erros
+} catch (PDOException $e) {
+    die("Erro ao conectar ao banco de dados: " . $e->getMessage());
 }
 
+// dá get, busca, o id do produto
 if (isset($_GET['id'])) {
     $produto_id = $_GET['id'];
 } else {
-    echo "ID não fornecido.";
+    die("ID não fornecido.");
 }
 
 echo "<pre>$produto_id</pre>";
 
-function displayOneProduto($conn, $produto_id){
-    $stmt = mysqli_prepare($conn, "SELECT id, nome, preco, foto_url FROM produtos WHERE id = ?");
-    mysqli_stmt_bind_param($stmt, "i", $produto_id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($result);
-    if($row){
-        echo "<div>";
-        echo "<h1>" . $row["nome"] . "</h1>";
-        echo "<img src='../".$row["foto_url"]."' alt='Imagem do Produto' width='200'/><br>";
-        echo "<input type='hidden' name='". $row["preco"]."'>";
-        echo "<h2>€" . $row["preco"]."</h2>";
-        echo "<button>adicionar</button>";
-        echo "</div>";   
+// esta função serve para exibir um produto
+function displayOneProduto($pdo, $produto_id) {
+    try {
+        $stmt = $pdo->prepare("SELECT id, nome, preco, foto_url FROM produtos WHERE id = :id");
+        $stmt->bindParam(':id', $produto_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row) {
+            echo "<div>";
+            echo "<h1>" . htmlspecialchars($row["nome"]) . "</h1>";
+            echo "<img src='../" . htmlspecialchars($row["foto_url"]) . "' alt='Imagem do Produto' width='200'/><br>";
+            echo "<input type='hidden' name='" . htmlspecialchars($row["preco"]) . "'>";
+            echo "<h2>€" . htmlspecialchars($row["preco"]) . "</h2>";
+            echo "<button>adicionar</button>";
+            echo "</div>";   
+        } else {
+            echo "<h2>Produto não encontrado.</h2>";
+        }
+    } catch (PDOException $e) {
+        die("Erro ao buscar produto: " . $e->getMessage());
     }
- 
 }
 
 ?>
