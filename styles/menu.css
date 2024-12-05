@@ -19,14 +19,22 @@ body {
 }
 
 .produtos > div {
-  background-color: var(--pastel-color);
   width: 300px;
-  margin: 20px;
-  transition: 0.5s;
+  margin: 30px;
+  border-radius: 15px;
+}
+
+.produtos > .produto:hover {
+  cursor: pointer;
+  border-radius: 15px;
+  width: 302px;
+  margin: 29px;
 }
 
 .produtos h1 {
   color: var(--bordo-claro-color);
+  text-transform: uppercase;
+  font-size: 30px;
 }
 
 .produtos h2 {
@@ -40,6 +48,15 @@ body {
   margin-bottom: 10px;
   cursor: pointer;
   border: none;
+  align-items: center;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+.produtos img {
+  margin-top: 10px;
+  border-radius: 15px;
 }
 
 .formContainer > h1 {
@@ -84,10 +101,8 @@ body {
   }
 
   .produtos > div {
-    background-color: var(--pastel-color);
     width: 300px;
     margin: 20px;
-    transition: 0.5s;
   }
 
   .produtos button {

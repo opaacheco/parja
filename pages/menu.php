@@ -50,9 +50,10 @@ function displayRegister(){
 function displayProdutos($result) {
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-      echo "<div>";
+      echo "<div class='produto' onclick=\"window.location.href='detalhes_produto.php?id=" . $row["id"] . "'\">";
       echo "<h1>" . $row["nome"] . "</h1>";
       echo "<img src='../".$row["foto_url"]."' alt='Imagem do Produto' width='200'/><br>";
+      echo "<input type='hidden' name='". $row["id"]."'>";
       echo "<h2>€" . $row["preco"]."</h2>";
       echo "<button>adicionar</button>";
       echo "</div>";
@@ -93,11 +94,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       mysqli_stmt_execute($stmt);
       $resultatoUser = mysqli_stmt_get_result($stmt);
       if (mysqli_num_rows($resultatoUser) > 0) {
+        $typePage = 'produtos';
       } else {
         header("Location: menu.php");
         exit;
       }
-      $typePage = 'produtos';
   }
 }
 
