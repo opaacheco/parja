@@ -24,10 +24,10 @@
       <div class="opcoes">
         <nav>
           <ul>
-            <li><a href="./home.html">home</a></li>
-            <li><a href="./sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="./home.php">home</a></li>
+            <li><a href="./sobre-nos.php">Sobre Nós</a></li>
             <li><a href="./menu.php">Menu</a></li>
-            <li><a href="./playlist.html">Playlist</a></li>
+            <li><a href="./playlist.php">Playlist</a></li>
           </ul>
           <div class="linha"></div>
         </nav>
@@ -37,37 +37,37 @@
           >
           <div id="menu-hidde">
             <ul class="nav-hidde">
-              <li class="show-movel"><a href="./home.html">home</a></li>
+              <li class="show-movel"><a href="./home.php">home</a></li>
               <li class="show-movel">
-                <a href="./sobre-nos.html">Sobre Nós</a>
+                <a href="./sobre-nos.php">Sobre Nós</a>
               </li>
               <li class="show-movel"><a href="./menu.php">Menu</a></li>
               <li class="show-movel">
-                <a href="./playlist.html">Playlist</a>
+                <a href="./playlist.php">Playlist</a>
               </li>
               <li>
-                <a href="./topicoUm.html">Tópico 1</a>
+                <a href="./topicoUm.php">Tópico 1</a>
               </li>
               <li>
-                <a href="./topicoDois.html">Tópico 2</a>
+                <a href="./topicoDois.php">Tópico 2</a>
               </li>
               <li>
-                <a href="./topicoTres.html">Tópico 3</a>
+                <a href="./topicoTres.php">Tópico 3</a>
               </li>
               <li>
-                <a href="./topicoQuatro.html">Tópico 4</a>
+                <a href="./topicoQuatro.php">Tópico 4</a>
               </li>
               <li>
-                <a href="./topicoCinco.html">Tópico 5</a>
+                <a href="./topicoCinco.php">Tópico 5</a>
               </li>
               <li>
-                <a href="./topicoSeis.html">Tópico 6</a>
+                <a href="./topicoSeis.php">Tópico 6</a>
               </li>
               <li>
-                <a href="./topicoSete.html">Tópico 7</a>
+                <a href="./topicoSete.php">Tópico 7</a>
               </li>
               <li>
-                <a href="./topicoOito.html">Tópico 8</a>
+                <a href="./topicoOito.php">Tópico 8</a>
               </li>
             </ul>
           </div>
