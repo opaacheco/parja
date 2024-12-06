@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoCinco.css" />
-    <title>Tópico 4</title>
+    <title>Tópico 5</title>
   </head>
   <body>
     <header>
@@ -80,7 +80,7 @@
       </header>
 
       <section>
-        <h2>Marketing Digital</h2>
+        <h3>Marketing Digital</h3>
         <ul>
           <li>
             Campanhas visuais que conectam o charme da cafetaria à cultura

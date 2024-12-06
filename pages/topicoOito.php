@@ -11,7 +11,7 @@ php<!DOCTYPE html>
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoCinco.css" />
-    <title>Tópico 4</title>
+    <title>Tópico 8</title>
   </head>
   <body>
     <header>
@@ -79,7 +79,7 @@ php<!DOCTYPE html>
             <h2>Gestão da Cadeia de Suprimentos (SCM)</h2>
         </header>
         <section>
-            <h2>Como a Parja Atua com o SCM</h2>
+            <h3>Como a Parja Atua com o SCM</h3>
             <ul>
                 <li>Parcerias com produtores locais para aquisição de café e alimentos frescos.</li>
                 <li>Estoque controlado com base em demanda sazonal e eventos.</li>
@@ -87,7 +87,7 @@ php<!DOCTYPE html>
             </ul>
         </section>
         <section>
-            <h2>Otimização da Cadeia de Suprimentos</h2>
+            <h3>Otimização da Cadeia de Suprimentos</h3>
             <ul>
                 <li><strong>Fornecedores:</strong> Preferência por produtos orgânicos e de comércio justo.</li>
                 <li><strong>Logística:</strong> Redução de transporte para diminuir emissões de carbono.</li>
@@ -95,7 +95,7 @@ php<!DOCTYPE html>
             </ul>
         </section>
         <section>
-            <h2>Benefícios da Otimização</h2>
+            <h3>Benefícios da Otimização</h3>
             <ul>
                 <li>Redução de custos operacionais.</li>
                 <li>Aumento da qualidade dos produtos servidos.</li>
@@ -103,7 +103,7 @@ php<!DOCTYPE html>
             </ul>
         </section>
         <section>
-            <h2>Sustentabilidade na Cadeia de Suprimentos</h2>
+            <h3>Sustentabilidade na Cadeia de Suprimentos</h3>
             <ul>
                 <li>Uso de embalagens biodegradáveis e compostáveis.</li>
                 <li>Compra de ingredientes em quantidades ideais para minimizar desperdícios.</li>

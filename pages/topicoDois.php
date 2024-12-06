@@ -76,67 +76,70 @@
     </header>
     <main>
       <div class="opcao-hide">
-        <h1>Ánalise swot</h1>
+        <h1>Ánalise Swot</h1>
       </div>
       <div class="topicoDois">
-        <div class="swot">
-          <h2>FORÇAS</h2>
-          <ul>
-            <li>Qualidade</li>
-            <li>Ambiente Inovador e Acolhedor</li>
-            <li>
-              Atendimento extremamente cordial, incluindo visitas à casa do
-              cliente
-            </li>
-            <li>Variedade e Experimentação</li>
-            <li>Conexão com a Natureza e Sustentabilidade</li>
-          </ul>
-        </div>
 
-        <div class="swot">
-          <h2>FRAQUEZAS</h2>
-          <ul>
-            <li>Falta de Estacionamento</li>
-            <li>Horários Bem Específicos</li>
-            <li>Explicação Excessiva dos Produtos</li>
-            <li>Foco Intenso nos Clientes</li>
-            <li>Custo de Manutenção do Espaço</li>
-          </ul>
-        </div>
+            <div class="swot" id="forcas">
+              <h2>FORÇAS</h2>
+              <ul>
+                <li>Qualidade</li>
+                <li>Ambiente Inovador e Acolhedor</li>
+                <li>
+                  Atendimento extremamente cordial, incluindo visitas à casa do
+                  cliente
+                </li>
+                <li>Variedade e Experimentação</li>
+                <li>Conexão com a Natureza e Sustentabilidade</li>
+              </ul>
+            </div>
 
-        <div class="swot">
-          <h2>OPORTUNIDADES</h2>
-          <ul>
-            <li>Eventos de degustação</li>
-            <li>Maior divulgação local</li>
-            <li>Parceria com apps de entrega</li>
-            <li>Eventos de Jazz ao Vivo</li>
-            <li>Expansão nas Redes Sociais</li>
-          </ul>
-        </div>
+            <div class="swot">
+              <h2>FRAQUEZAS</h2>
+              <ul>
+                <li>Falta de Estacionamento</li>
+                <li>Horários Bem Específicos</li>
+                <li>Explicação Excessiva dos Produtos</li>
+                <li>Foco Intenso nos Clientes</li>
+                <li>Custo de Manutenção do Espaço</li>
+              </ul>
+            </div>
 
-        <div class="swot">
-          <h2>AMEAÇAS</h2>
-          <ul>
-            <li>Concorrência de Cafetarias</li>
-            <li>Variações no Custo dos Grãos de Café</li>
-            <li>Estação do Ano</li>
-            <li>Dependência do Turismo</li>
-            <li>Preferências por Consumo Rápido</li>
-          </ul>
-        </div>
+            <div class="swot">
+              <h2>OPORTUNIDADES</h2>
+              <ul>
+                <li>Eventos de degustação</li>
+                <li>Maior divulgação local</li>
+                <li>Parceria com apps de entrega</li>
+                <li>Eventos de Jazz ao Vivo</li>
+                <li>Expansão nas Redes Sociais</li>
+              </ul>
+            </div>
+
+            <div class="swot">
+              <h2>AMEAÇAS</h2>
+              <ul>
+                <li>Concorrência de Cafetarias</li>
+                <li>Variações no Custo dos Grãos de Café</li>
+                <li>Estação do Ano</li>
+                <li>Dependência do Turismo</li>
+                <li>Preferências por Consumo Rápido</li>
+              </ul>
+            </div>
+
       </div>
+
       <!-- começo forças -->
       <div class="container-hides">
         <div class="opcao-hide" onclick="openOpcaoForca()">
           <i id="flecha-forca" class="material-icons">arrow_forward</i>
-          <h1>forças</h1>
+          <h1>Forças</h1>
         </div>
         <div id="explicacao-forca" class="forca-explicacao">
           <ul>
             <li>
-              <strong>Qualidade:</strong> Produtos premium para uma experiência
-              única.
+              <strong>Qualidade:</strong>
+              Produtos premium para uma experiência única.
             </li>
             <li>
               <strong>Ambiente Acolhedor:</strong>
@@ -159,13 +162,13 @@
         <!-- começo fraquezas -->
         <div class="opcao-hide" onclick="openOpcaoFraqueza()">
           <i id="flecha-fraqueza" class="material-icons">arrow_forward</i>
-          <h1>fraquezas</h1>
+          <h1>Fraquezas</h1>
         </div>
         <div id="explicacao-fraquezas" class="explicacao-fraqueza">
           <ul>
             <li>
-              <strong>alta de Estacionamento:</strong>
-              F Limita o acesso de clientes de carro.
+              <strong>Falta de Estacionamento:</strong>
+              Limita o acesso de clientes de carro.
             </li>
             <li>
               <strong>Horários Específicos: </strong>
@@ -180,15 +183,15 @@
               Pode parecer invasivo ou sobrecarregar a equipe.
             </li>
             <li>
-              Custo de Manutenção: Manter os sofás e o escorrega é caro e
-              desafiador para a sustentabilidade.
+              <strong>Custo de Manutenção:</strong>
+              Manter os sofás e o escorrega é caro e desafiador para a sustentabilidade.
             </li>
           </ul>
         </div>
         <!-- começo oportunidades -->
         <div class="opcao-hide" onclick="openOpcaoOportunidade()">
           <i id="flecha-oportunidade" class="material-icons">arrow_forward</i>
-          <h1>oportunidade</h1>
+          <h1>Oportunidade</h1>
         </div>
         <div id="explicacao-oportunidade" class="oportunidade-explicacao">
           <ul>
@@ -217,7 +220,7 @@
         <!-- começo ameaças -->
         <div class="opcao-hide" onclick="openOpcaoAmeacas()">
           <i id="flecha-ameacas" class="material-icons">arrow_forward</i>
-          <h1>ameaças</h1>
+          <h1>Ameaças</h1>
         </div>
         <div id="explicacao-ameacas" class="ameacas-explicacao">
           <ul>

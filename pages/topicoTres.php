@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoTres.css" />
-    <title>Tópico 2</title>
+    <title>Tópico 3</title>
   </head>
   <body>
     <header>

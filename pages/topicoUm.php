@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoUm.css" />
-    <title>Tópico um</title>
+    <title>Tópico 1</title>
   </head>
   <body>
     <header>
@@ -83,29 +83,29 @@
         <div>
           <p>
             <br />
-            <li>Nome da Empresa - PARJA LDA</li>
+            <li><b>Nome da Empresa</b> - PARJA LDA</li>
             <br />
             <li>
-              Logo - Foi discutido a ideia de usar um animal como logo e
+            <b>Logo</b> - Foi discutido a ideia de usar um animal como logo e
               acabamos por escolher um pinguim com chapéu e óculos para dar a
               ideia mais formal.
             </li>
             <br />
             <li>
-              Sócios - Artiom Gusanu (33,33%), Pedro Pacheco (33,33%) e João
+            <b>Sócios</b> - Artiom Gusanu (33,33%), Pedro Pacheco (33,33%) e João
               Marques (33,33%)
             </li>
             <br />
-            <li>Organização do tipo privada com fins lucrativos</li>
+            <li><b> Tipo de Organização</b> - Privada com fins lucrativos.</li>
             <br />
-            <li>Capital Social - 60.000€</li>
+            <li><b>Capital Social</b> - 60.000€</li>
             <br />
             <li>
-              CAE - 56301 (Exploração de Cafés) - Este é devido á empresa ser
+            <b>CAE</b> - 56301 (Exploração de Cafés) - Este é devido á empresa ser
               muito á volta da venda de café
             </li>
             <br />
-            <li>NiF - 546727530</li>
+            <li><b>NiF</b> - 546727530</li>
           </p>
           <div class="explicacaoEmpresa">
             <br />
