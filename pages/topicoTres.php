@@ -152,7 +152,7 @@
             Adaptação do sistema aos módulos necessários (Semanas 2-3).
           </li>
           <li>
-            <strong>Treinamento dos Usuários:</strong>
+            <strong>Treinamento dos Utilizadores:</strong>
             Formação das equipes para utilização dos módulos (Semanas 4-5).
           </li>
           <li>

@@ -146,7 +146,7 @@
               Espaço inovador com sofás e escorrega para um toque descontraído.
             </li>
             <li>
-              <strong>tendimento Cordial:</strong>
+              <strong>Atendimento Cordial:</strong>
               A Serviço personalizado, incluindo visitas à casa do cliente.
             </li>
             <li>
