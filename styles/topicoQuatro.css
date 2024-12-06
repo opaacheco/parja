@@ -16,9 +16,9 @@ main {
     height: 300px;
     border-radius: 50%;
     background: conic-gradient(
-        #6fb1ff 0% 33%,  
-        #61ff87 33% 66%, 
-        #ff6f61 66% 100% 
+        #4b6e8a 0% 33%,  
+        #5b8a60 33% 66%, 
+        #8a4b4d 66% 100% 
     );
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
