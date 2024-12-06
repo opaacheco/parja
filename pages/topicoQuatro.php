@@ -77,11 +77,11 @@
     <main>
       <div class="title">Análise Externa</div>
       <div class="circle-container">
-        <a href="./economico.html" class="section1"
-          >Viabilidade<br />Econômica</a
+        <a href="./economico.php" class="section1"
+          >Viabilidade<br />Económica</a
         >
-        <a href="./social.html" class="section2">Aspetos<br />Sociais</a>
-        <a href="./ambiental.html" class="section3">Aspetos<br />Ambientais</a>
+        <a href="./social.php" class="section2">Aspetos<br />Sociais</a>
+        <a href="./ambiental.php" class="section3">Aspetos<br />Ambientais</a>
       </div>
     </main>
 
