@@ -246,6 +246,14 @@
           </ul>
         </div>
       </div>
+      <div class="esquemas">
+      <h2>Recursos e Departamentos</h2>
+      <img src="../images/recursos-departamentos.png" alt="Esquema de Recursos e Departamentos" class="esquema-imagem1" />
+
+      <h2>Organograma da Empresa</h2>
+      <img src="../images/organograma-empresa.jpg" alt="Esquema do Organograma da Empresa" class="esquema-imagem2" />
+      <h6>(ainda vamos melhorar a qualidade da imagem)</h6>
+    </div>
     </main>
     <footer>
       <div class="contatos">

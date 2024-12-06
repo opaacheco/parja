@@ -53,7 +53,6 @@ main h2 {
   text-align: center;
   align-items: center;
   font-size: 15px;
-  cursor: pointer;
 }
 
 .forca-explicacao,
@@ -85,23 +84,53 @@ main h2 {
 }
 
 #forcas {
-  background-color: green;
+  background-color: #5b8a60;
 }
 
 #fraquezas {
-  background-color: purple;
+  background-color: #7a5a91;
 }
 
 #oportunidades {
-  background-color: blue;
+  background-color: #4b6e8a;
 }
 
 #ameacas {
-  background-color: red;
+  background-color: #8a4b4d;
 }
 
 .ameacas-explicacao {
   display: none;
+}
+
+.esquemas {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.esquemas h2 {
+  color: var(--cinzento-color);
+  font-family: var(--font-nono);
+  padding: 10px;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.esquema-imagem1 {
+  max-width: 85%;
+  height: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+
+.esquema-imagem2 {
+  width: 85%;
+  height: auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
 }
 
 @media (max-width: 915px) {
