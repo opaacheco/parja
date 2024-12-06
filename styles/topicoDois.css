@@ -84,6 +84,22 @@ main h2 {
   display: none;
 }
 
+#forcas {
+  background-color: green;
+}
+
+#fraquezas {
+  background-color: purple;
+}
+
+#oportunidades {
+  background-color: blue;
+}
+
+#ameacas {
+  background-color: red;
+}
+
 .ameacas-explicacao {
   display: none;
 }

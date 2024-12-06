@@ -80,7 +80,7 @@
       </div>
       <div class="topicoDois">
 
-            <div class="swot" id="forcas">
+            <div id="forcas" class="swot" >
               <h2>FORÇAS</h2>
               <ul>
                 <li>Qualidade</li>
@@ -94,7 +94,7 @@
               </ul>
             </div>
 
-            <div class="swot">
+            <div id="fraquezas" class="swot">
               <h2>FRAQUEZAS</h2>
               <ul>
                 <li>Falta de Estacionamento</li>
@@ -105,7 +105,7 @@
               </ul>
             </div>
 
-            <div class="swot">
+            <div  id="oportunidades" class="swot">
               <h2>OPORTUNIDADES</h2>
               <ul>
                 <li>Eventos de degustação</li>
@@ -116,7 +116,7 @@
               </ul>
             </div>
 
-            <div class="swot">
+            <div  id="ameacas" class="swot">
               <h2>AMEAÇAS</h2>
               <ul>
                 <li>Concorrência de Cafetarias</li>
