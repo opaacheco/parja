@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoCinco.css" />
-    <title>Tópico 2</title>
+    <title>Tópico 7</title>
   </head>
   <body>
     <header>
@@ -79,14 +79,14 @@
             <h2>Gestão de Relacionamento com o Cliente (CRM)</h2>
         </header>
         <section>
-            <h2>O que é um CRM?</h2>
+            <h3>O que é um CRM?</h3>
             <ul>
                 <li>Um sistema para gerenciar interações com clientes e potenciais clientes.</li>
                 <li>Ajuda a organizar informações, automatizar processos e melhorar o atendimento.</li>
             </ul>
         </section>
         <section>
-            <h2>CRM Utilizado: Odoo</h2>
+            <h3>CRM Utilizado: Odoo</h3>
             <ul>
                 <li>Plataforma integrada que oferece módulos de vendas, marketing e atendimento.</li>
                 <li>Facilidade de uso e personalização para pequenas empresas como a PARJA.</li>
@@ -94,7 +94,7 @@
             </ul>
         </section>
         <section>
-            <h2>Benefícios para a Parja Cafetaria</h2>
+            <h3>Benefícios para a Parja Cafetaria</h3>
             <ul>
                 <li><strong>Melhoria no atendimento:</strong> Histórico de interações e preferências dos clientes.</li>
                 <li><strong>Campanhas personalizadas:</strong> Promoções baseadas nos hábitos de consumo.</li>
@@ -102,7 +102,7 @@
             </ul>
         </section>
         <section>
-            <h2>Forma de Atuação com o CRM</h2>
+            <h3>Forma de Atuação com o CRM</h3>
             <ul>
                 <li>Envio de newsletters com eventos e promoções semanais.</li>
                 <li>Segmentação de clientes por perfil (turistas, locais, vegans, etc.).</li>

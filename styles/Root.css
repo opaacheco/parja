@@ -15,6 +15,10 @@
   --pastel-color: #e6ddbc;
   --bordo-claro-color: #822626;
   --bordo-color: #690202;
+  --azul-escuro: #32448c;
+  --verde-escuro: #042414;
+  --verde-menos-escuro: #1c543c;
+  --amarelo-mustarda: #ecbc40;
 }
 
 @media (max-width: 915px) {

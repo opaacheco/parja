@@ -25,11 +25,6 @@ main {
   width: 1000px;
 }
 
-.topicoPartUm {
-  display: flex;
-  justify-content: center;
-}
-
 .swot {
   width: 450px;
   background-color: var(--bordo-color);

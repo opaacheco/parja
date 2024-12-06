@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/topicoSeis.css" />
-    <title>Tópico 2</title>
+    <title>Tópico 6</title>
   </head>
   <body>
     <header>
@@ -75,7 +75,7 @@
       </div>
     </header>
     <main>
-      <h1>~ TUTORIAIS ~</h1>
+      <h1> Tutoriais de Software Odoo </h1>
       <h2>Tutorial para login do software</h2>
       <video controls>
         <source src="../videos/video1.mp4" type="video/mp4" />
