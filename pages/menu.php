@@ -1,13 +1,17 @@
 <?php 
 
+session_start();
+
+
 $servername = "localhost";
 $username = "root"; 
-$password = "root123";
-$dbname = "parja"; 
+$password = "root";
+$dbname = "lolja"; 
 
 
 $email = "";
 $typePage = "";
+$erros = "";
 
 /*
 $servername = "sql310.infinityfree.com";
@@ -38,10 +42,26 @@ $stmt = $pdo->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 function displayNoAuthPage(){
-  echo <<<HTML
+  Global $erros;
+  if($erros == ""){
+      echo <<<HTML
+      <form method='POST' action=''>
+        <input type='email' name='email' placeholder='Email' required/>
+        <input type='password' name='password' placeholder='Senha' required/>
+        <button type='submit'>entrar</button>
+      </form>
+
+      <form method='POST' action=''>
+        <input type='hidden' name='registar' value='true' />
+        <button type='submit'>registar</button>
+      </form>
+    HTML;
+  }else{
+    echo <<<HTML
     <form method='POST' action=''>
       <input type='email' name='email' placeholder='Email' required/>
       <input type='password' name='password' placeholder='Senha' required/>
+      <p id="errors">credenciais inválidas</p>
       <button type='submit'>entrar</button>
     </form>
 
@@ -50,6 +70,8 @@ function displayNoAuthPage(){
       <button type='submit'>registar</button>
     </form>
   HTML;
+  }
+
 }
 
 function displayRegister(){
@@ -59,17 +81,10 @@ function displayRegister(){
       <input type='email' name='email' placeholder='Email' required/>
       <input type='password' name='password' placeholder='Senha' required/>
       <button type='submit' name='registarBD'>Registar</button>
+      <button type='submit'><a href="menu.php" color='#e6ddbc'>login</a></button>
     </form>
   HTML;
 }
-
-// function displayProdutos($result) {
-//   if (mysqli_num_rows($result) > 0) {
-//     while ($row = mysqli_fetch_assoc($result)) {
-//       $id = $row["id"];
-//             $nome = htmlspecialchars($row["nome"]);
-//             $fotoUrl = htmlspecialchars($row["foto_url"]);
-//             $preco = htmlspecialchars($row["preco"]);
 
 function displayProdutos($result) {
   if (count($result) > 0) {
@@ -99,39 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $email = $_POST['email'];
   $password = $_POST['password']; 
 
-  // $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
-  // mysqli_stmt_bind_param($stmt, "s", $email);
-  // mysqli_stmt_execute($stmt);
-  // $resultatoUser = mysqli_stmt_get_result($stmt);
-
- // if (mysqli_num_rows($resultatoUser) > 0) {
-  //   header("Location: menu.php");
-  //   exit;
-  // }
-
-//  $stmt = mysqli_prepare($conn, "INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, ?)");
-//   $tipo_usuario = 'usuario'; 
-//   mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $password, $tipo_usuario);
-//   mysqli_stmt_execute($stmt);
-// }
-
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//   if (isset($_POST['registar'])) {
-//       $typePage = 'register';
-//   } elseif (isset($_POST['email'])) {
-//       $email = $_POST['email'];
-//       $stmt = mysqli_prepare($conn, "SELECT id, email, senha FROM usuarios WHERE email = ?");
-//       mysqli_stmt_bind_param($stmt, "s", $email);
-//       mysqli_stmt_execute($stmt);
-//       $resultatoUser = mysqli_stmt_get_result($stmt);
-//       if (mysqli_num_rows($resultatoUser) > 0) {
-//         $typePage = 'produtos';
-//       } else {
-//         header("Location: menu.php");
-//         exit;
-//       }
-//   }
-// }
+  $hashPass = password_hash($password,  PASSWORD_DEFAULT);
 
 // vê se o uzuário já existe
   $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
@@ -149,23 +132,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $tipo_usuario = 'usuario';
   $stmt->bindParam(':nome', $name);
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':senha', $password);
+  $stmt->bindParam(':senha', $hashPass);
   $stmt->bindParam(':tipo_usuario', $tipo_usuario);
   $stmt->execute();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['registar'])) {
+    $errors = "";
     $typePage = 'register';
   } elseif (isset($_POST['email'])) {
     $email = $_POST['email'];
+    $password = $_POST['password'];
+    echo "<pre>".password_hash($password,  PASSWORD_DEFAULT)."</pre>";
     $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $resultatoUser = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($resultatoUser) {
-      $typePage = 'produtos';
+      $_SESSION['emailUser'] = $email;
+      if(password_verify($password, $resultatoUser['senha'])){
+        $typePage = 'produtos';
+      }else{
+        $erros = "password incorreta";
+      }
     } else {
+      $erros = "password incorreta";
       header("Location: menu.php");
       exit;
     }
@@ -201,10 +193,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="opcoes">
         <nav>
           <ul>
-            <li><a href="./home.html">home</a></li>
-            <li><a href="./sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="./home.php">home</a></li>
+            <li><a href="./sobre-nos.php">Sobre Nós</a></li>
             <li><a href="">Menu</a></li>
-            <li><a href="./playlist.html">Playlist</a></li>
+            <li><a href="./playlist.php">Playlist</a></li>
           </ul>
           <div class="linha"></div>
         </nav>
@@ -214,37 +206,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           >
           <div id="menu-hidde">
             <ul class="nav-hidde">
-              <li class="show-movel"><a href="/home.html">home</a></li>
+              <li class="show-movel"><a href="/home.php">home</a></li>
               <li class="show-movel">
-                <a href="./sobre-nos.html">Sobre Nós</a>
+                <a href="./sobre-nos.php">Sobre Nós</a>
               </li>
-              <li class="show-movel"><a href="../pages/menu.html">Menu</a></li>
+              <li class="show-movel"><a href="../pages/menu.php">Menu</a></li>
               <li class="show-movel">
-                <a href="./playlist.html">Playlist</a>
+                <a href="./playlist.php">Playlist</a>
               </li>
               <li>
-                <a href="./topicoUm.html">Tópico 1</a>
+                <a href="./topicoUm.php">Tópico 1</a>
               </li>
               <li>
-                <a href="./topicoDois.html">Tópico 2</a>
+                <a href="./topicoDois.php">Tópico 2</a>
               </li>
               <li>
-                <a href="./topicoTres.html">Tópico 3</a>
+                <a href="./topicoTres.php">Tópico 3</a>
               </li>
               <li>
-                <a href="./topicoQuatro.html">Tópico 4</a>
+                <a href="./topicoQuatro.php">Tópico 4</a>
               </li>
               <li>
-                <a href="./topicoCinco.html">Tópico 5</a>
+                <a href="./topicoCinco.php">Tópico 5</a>
               </li>
               <li>
-                <a href="./topicoSeis.html">Tópico 6</a>
+                <a href="./topicoSeis.php">Tópico 6</a>
               </li>
               <li>
-                <a href="./topicoSete.html">Tópico 7</a>
+                <a href="./topicoSete.php">Tópico 7</a>
               </li>
               <li>
-                <a href="./topicoOito.html">Tópico 8</a>
+                <a href="./topicoOito.php">Tópico 8</a>
               </li>
             </ul>
           </div>
