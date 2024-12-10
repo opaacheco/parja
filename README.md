@@ -9,6 +9,7 @@ Este projeto apresenta o site oficial da nossa cafetaria, que oferece um ambient
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Imagens do Site](#imagens-do-site)
 
 ## Sobre o Projeto
 
@@ -63,7 +64,7 @@ Abaixo estão as telas para realizar login ou registrar dos novos utilizadores n
 A secção dos produtos permite ao utilizador adicionar itens ao carrinho, com um design claro e funcional:
 
 **Visualização de produtos (parte 1):**
-![produtosParja02](https://github.com/user-attachments/assets/5592e8e9-7e68-4a3e-b7ff-2bbbcf2fa8e6)
+![produtosParja01](https://github.com/user-attachments/assets/5592e8e9-7e68-4a3e-b7ff-2bbbcf2fa8e6)
 
 **Visualização de produtos (parte 2):**
-![produtosParja01](https://github.com/user-attachments/assets/7c34fbb5-7eea-43f0-b0ab-b902b7d7b837)
+![produtosParja02](https://github.com/user-attachments/assets/d3df502d-f7bf-464e-a31a-e2404e495275)
