@@ -2,22 +2,26 @@
 
 session_start();
 
-/*
+
 $servername = "localhost";
 $username = "root"; 
-$password = "root";
-$dbname = "lolja"; 
-*/
+$password = "root123";
+$dbname = "parja"; 
+
 
 $email = "";
 $typePage = "";
-$erros = "";
 
+$_SESSION["erros"]="";
 
-$servername = "sql310.infinityfree.com";
-$username = "if0_37797726"; 
-$password = "6XXxkI87k6HHkv";
-$dbname = "if0_37797726_parjadb"; 
+echo"<pre>";
+print_r($_SESSION["erros"]);
+echo"</pre>";
+
+// $servername = "sql310.infinityfree.com";
+// $username = "if0_37797726"; 
+// $password = "6XXxkI87k6HHkv";
+// $dbname = "if0_37797726_parjadb"; 
 
 
 // $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -42,8 +46,7 @@ $stmt = $pdo->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 function displayNoAuthPage(){
-  Global $erros;
-  if($erros == ""){
+  if($_SESSION["erros"] == ""){
       echo <<<HTML
       <form method='POST' action=''>
         <input type='email' name='email' placeholder='Email' required/>
@@ -138,12 +141,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['registar'])) {
-    $errors = "";
+    $_SESSION["erros"] = "password incorreta";
     $typePage = 'register';
   } elseif (isset($_POST['email'])) {
     $email = $_POST['email'];
+    $_SESSION["email"] = $email;
     $password = $_POST['password'];
-    echo "<pre>".password_hash($password,  PASSWORD_DEFAULT)."</pre>";
     $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
@@ -151,15 +154,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($resultatoUser) {
       $_SESSION['emailUser'] = $email;
       if(password_verify($password, $resultatoUser['senha'])){
+        $_SESSION['emailUser'] = $email;
         $typePage = 'produtos';
+        $_SESSION["erros"] = "";
       }else{
-        $erros = "password incorreta";
-        header("Location: menu.php");
+        $_SESSION["erros"] = "password incorreta";
       }
     } else {
-      $erros = "password incorreta";
-      header("Location: menu.php");
-      exit;
+      $_SESSION["erros"] = "password incorreta";
     }
   }
 }
