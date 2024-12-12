@@ -1,22 +1,22 @@
 <?php 
 
 session_start();
-
+/*
 $servername = "localhost";
 $username = "root"; 
-$password = "root123";
-$dbname = "parja"; 
+$password = "root";
+$dbname = "lolja"; 
+*/
 
 
 $email = "";
 $typePage = "";
 
-/*
+
 $servername = "sql310.infinityfree.com";
 $username = "if0_37797726"; 
 $password = "6XXxkI87k6HHkv";
 $dbname = "if0_37797726_parjadb"; 
-*/
 
 // $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -64,8 +64,6 @@ if (isset($_GET['id'])) {
 } else {
     die("ID não fornecido.");
 }
-
-echo "<pre>$produto_id</pre>";
 
 // esta função serve para exibir um produto
 function displayOneProduto($pdo, $produto_id) {
@@ -122,7 +120,7 @@ function displayOneProduto($pdo, $produto_id) {
           <ul>
             <li><a href="./home.php">home</a></li>
             <li><a href="./sobre-nos.php">Sobre Nós</a></li>
-            <li><a href="">Menu</a></li>
+            <li><a href="./menu.php">Menu</a></li>
             <li><a href="./playlist.php">Playlist</a></li>
           </ul>
           <div class="linha"></div>
@@ -172,7 +170,7 @@ function displayOneProduto($pdo, $produto_id) {
     </header>
 
     <div class="main-menu">
-        <?= displayOneProduto($conn, $produto_id)?>    
+        <?= displayOneProduto($pdo, $produto_id)?>    
     </div>
 
     <footer>

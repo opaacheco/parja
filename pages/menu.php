@@ -2,23 +2,23 @@
 
 session_start();
 
-
+/*
 $servername = "localhost";
 $username = "root"; 
 $password = "root";
 $dbname = "lolja"; 
-
+*/
 
 $email = "";
 $typePage = "";
 $erros = "";
 
-/*
+
 $servername = "sql310.infinityfree.com";
 $username = "if0_37797726"; 
 $password = "6XXxkI87k6HHkv";
 $dbname = "if0_37797726_parjadb"; 
-*/
+
 
 // $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -71,7 +71,6 @@ function displayNoAuthPage(){
     </form>
   HTML;
   }
-
 }
 
 function displayRegister(){
@@ -155,6 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $typePage = 'produtos';
       }else{
         $erros = "password incorreta";
+        header("Location: menu.php");
       }
     } else {
       $erros = "password incorreta";
