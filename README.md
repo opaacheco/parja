@@ -31,6 +31,10 @@ O site foi desenvolvido para:
 - **JavaScript** para interatividade.
 - **PHP** para os servidor:
 
+## Tabelas da BD
+
+![image](https://github.com/user-attachments/assets/7ee4fc77-dd6b-4ef3-8375-92874147c623)
+
 1. Link do site:
    http://parja.rf.gd/parja/pages/home.html  
 2. Link da nossa playlist:
