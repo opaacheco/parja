@@ -4,16 +4,14 @@ session_start();
 
 include '../components/menuComponents.php';
 include '../db/connectDB.php';
+include '../db/querys.php';
 
 $email = "";
 $typePage = "";
 
 $_SESSION["erros"]= "";
 
-$pdo = connectDB();
-$sql = "SELECT id, nome, preco, foto_url FROM produtos";
-$stmt = $pdo->query($sql);
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$result = buscarProdutos();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
@@ -22,26 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $password = $_POST['password']; 
 
   $hashPass = password_hash($password,  PASSWORD_DEFAULT);
-
-// vê se o uzuário já existe
-  $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
-  $stmt->bindParam(':email', $email);
-  $stmt->execute();
-  $resultatoUser = $stmt->fetch(PDO::FETCH_ASSOC);
-
+  // vê se o uzuário já existe
+  $resultatoUser = buscarUsers($email);
   if ($resultatoUser) {
     header("Location: menu.php");
     exit;
   }
-
   // insere um novo usuario
-  $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (:nome, :email, :senha, :tipo_usuario)");
-  $tipo_usuario = 'usuario';
-  $stmt->bindParam(':nome', $name);
-  $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':senha', $hashPass);
-  $stmt->bindParam(':tipo_usuario', $tipo_usuario);
-  $stmt->execute();
+  inserirUser($name, $email, $hashPass, $tipo_usuario);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -52,10 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $_SESSION["email"] = $email;
     $password = $_POST['password'];
-    $stmt = $pdo->prepare("SELECT id, email, senha FROM usuarios WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-    $resultatoUser = $stmt->fetch(PDO::FETCH_ASSOC);
+    $resultatoUser = buscarUsers($email);
     if ($resultatoUser) {
       $_SESSION['emailUser'] = $email;
       if(password_verify($password, $resultatoUser['senha'])){
