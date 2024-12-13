@@ -2,114 +2,19 @@
 
 session_start();
 
-
-$servername = "localhost";
-$username = "root"; 
-$password = "root123";
-$dbname = "parja"; 
-
+include '../components/menuComponents.php';
+include '../db/connectDB.php';
 
 $email = "";
 $typePage = "";
 
-$_SESSION["erros"]="";
+$_SESSION["erros"]= "";
 
-echo"<pre>";
-print_r($_SESSION["erros"]);
-echo"</pre>";
-
-// $servername = "sql310.infinityfree.com";
-// $username = "if0_37797726"; 
-// $password = "6XXxkI87k6HHkv";
-// $dbname = "if0_37797726_parjadb"; 
-
-
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// if (!$conn) {
-//     die("Conexão falhou: " . mysqli_connect_error());
-// }
-
-// $sql = "SELECT id, nome, preco, foto_url FROM produtos";
-// $result = mysqli_query($conn, $sql);
-
-try {
-  $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Modo de erros
-} catch (PDOException $e) {
-  die("Erro ao conectar ao banco de dados: " . $e->getMessage());
-}
-
-// isto é para consultar para obter produtos
+$pdo = connectDB();
 $sql = "SELECT id, nome, preco, foto_url FROM produtos";
 $stmt = $pdo->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-function displayNoAuthPage(){
-  if($_SESSION["erros"] == ""){
-      echo <<<HTML
-      <form method='POST' action=''>
-        <input type='email' name='email' placeholder='Email' required/>
-        <input type='password' name='password' placeholder='Senha' required/>
-        <button type='submit'>entrar</button>
-      </form>
-
-      <form method='POST' action=''>
-        <input type='hidden' name='registar' value='true' />
-        <button type='submit'>registar</button>
-      </form>
-    HTML;
-  }else{
-    echo <<<HTML
-    <form method='POST' action=''>
-      <input type='email' name='email' placeholder='Email' required/>
-      <input type='password' name='password' placeholder='Senha' required/>
-      <p id="errors">credenciais inválidas</p>
-      <button type='submit'>entrar</button>
-    </form>
-
-    <form method='POST' action=''>
-      <input type='hidden' name='registar' value='true' />
-      <button type='submit'>registar</button>
-    </form>
-  HTML;
-  }
-}
-
-function displayRegister(){
-  echo <<<HTML
-    <form method='POST' action=''>
-      <input type='text' name='name' placeholder='Nome' required/>
-      <input type='email' name='email' placeholder='Email' required/>
-      <input type='password' name='password' placeholder='Senha' required/>
-      <button type='submit' name='registarBD'>Registar</button>
-      <button type='submit'><a href="menu.php" color='#e6ddbc'>login</a></button>
-    </form>
-  HTML;
-}
-
-function displayProdutos($result) {
-  if (count($result) > 0) {
-    foreach ($result as $row) {
-      $id = $row["id"];
-      $nome = htmlspecialchars($row["nome"]);
-      $fotoUrl = htmlspecialchars($row["foto_url"]);
-      $preco = htmlspecialchars($row["preco"]);
-
-      echo <<<HTML
-        <div class='produto' onclick="window.location.href='detalhes_produto.php?id=$id'">
-          <h1>$nome</h1>
-          <img src='../$fotoUrl' alt='Imagem do Produto' width='200'/><br>
-          <input type='hidden' name='$id'>
-          <h2>€$preco</h2>
-          <button>adicionar</button>
-        </div>
-      HTML;
-    }
-  } else {
-      echo "<h1>Nenhum resultado encontrado.</h1>";
-  }
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $name = $_POST['name'];
@@ -248,25 +153,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="main-menu">
       <div class="produtos">
         <?php 
-        
-        if($typePage === 'register'){
-          echo "<div class='formContainer'>";
-          echo "<h1>REGISTRAR</h1>";
-          displayRegister();
-          echo "</div>";
-        } elseif($typePage === 'produtos'){
-          displayProdutos($result);
-        } else {
-          echo "<div class='formContainer'>";
-          echo "<h1>LOGIN</h1>";
-          displayNoAuthPage();
-          echo "</div>";
-        }
-        
+        displayMenu($typePage, $result);
         ?>
       </div>
     </div>
-
     <footer>
       <div class="contatos">
         <ul>
