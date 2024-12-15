@@ -14,6 +14,12 @@ $_SESSION["erros"]= "";
 $result = buscarProdutos();
 
 
+if (isset($_GET['logout'])) {
+  session_destroy();
+  header('Location: menu.php');
+  exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -40,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $resultatoUser = buscarUsers($email);
     if ($resultatoUser) {
-      $_SESSION['emailUser'] = $email;
       if(password_verify($password, $resultatoUser['senha'])){
         $_SESSION['emailUser'] = $email;
+        $_SESSION['email'] = $email;
         $typePage = 'produtos';
         $_SESSION["erros"] = "";
       }else{
@@ -85,11 +91,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <ul>
             <li><a href="./home.php">home</a></li>
             <li><a href="./sobre-nos.php">Sobre Nós</a></li>
-            <li><a href="">Menu</a></li>
+            <li><a href="./menu.php">Menu</a></li>
             <li><a href="./playlist.php">Playlist</a></li>
           </ul>
           <div class="linha"></div>
         </nav>
+        <div class="profile-container">
+          <?php
+            if (!empty($_SESSION['email'])) {
+              // Usuário logado
+              echo '<div class="profile-container">
+                      <img src="../images/perfil.png" alt="Ícone do Perfil" class="profile-icon" id="profile-icon">
+                      <div class="dropdown" id="dropdown">
+                          <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) . '</p>
+                          <a href="menu.php?logout=true" class="logout-button">Logout</a>
+                      </div>
+                    </div>';
+          } else {
+              // Usuário não logado
+              echo '<div class="profile-container">
+                      <img src="../images/perfil.png" alt="Ícone do Perfil" class="profile-icon" id="profile-icon">
+                      <div class="dropdown" id="dropdown">
+                          <a href="menu.php" /*class="login-button"*/ >Login/Registrar</a>
+                      </div>
+                    </div>';
+          }
+          
+          ?>
+        </div>
         <div class="menu-obscuro">
           <i onclick="comutarMenu()" id="hamburguer" class="material-icons"
             >menu</i
