@@ -127,6 +127,70 @@ i#hamburguer {
   display: none;
 }
 
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background-color: white;
+  width: 200px;
+  z-index: 1000;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+.dropdown p {
+  margin: 10px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdown a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--bordo-claro-color);
+  color: var(--pastel-color);
+  border-radius: 8px;
+  margin: 5px 10px;
+}
+
+.dropdown a:hover {
+  background-color: var(--bordo-color);
+}
+
+.login-button {
+  display: block;
+  padding: 10px 20px;
+  background-color: var(--bordo-claro-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 20px auto;
+  width: 120px;
+  text-align: center;
+}
+
+.login-button:hover {
+  background-color: var(--bordo-color);
+}
+
+
 /*para telemovel*/
 
 @media (max-width: 915px) {
