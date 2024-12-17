@@ -15,15 +15,13 @@ $result = buscarProdutos();
 
 
 if (isset($_GET['logout'])) {
-  session_destroy();
-  header('Location: menu.php');
-  exit;
+  $_SESSION['emailUser'] = '';
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password']; 
+if (isset($_GET['registarBD'])) {
+  $name = isset($_GET['name']) ? $_GET['name'] : '';
+  $email = isset($_GET['email']) ? $_GET['email'] : '';
+  $password = isset($_GET['password']) ? $_GET['password'] : ''; 
 
   $hashPass = password_hash($password,  PASSWORD_DEFAULT);
   // vê se o uzuário já existe
@@ -33,30 +31,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registarBD'])) {
     exit;
   }
   // insere um novo usuario
-  inserirUser($name, $email, $hashPass, $tipo_usuario);
+  inserirUser($name, $email, $hashPass);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  if (isset($_POST['registar'])) {
-    $_SESSION["erros"] = "password incorreta";
-    $typePage = 'register';
-  } elseif (isset($_POST['email'])) {
-    $email = $_POST['email'];
-    $_SESSION["email"] = $email;
-    $password = $_POST['password'];
-    $resultatoUser = buscarUsers($email);
-    if ($resultatoUser) {
-      if(password_verify($password, $resultatoUser['senha'])){
-        $_SESSION['emailUser'] = $email;
-        $_SESSION['email'] = $email;
-        $typePage = 'produtos';
-        $_SESSION["erros"] = "";
-      }else{
-        $_SESSION["erros"] = "password incorreta";
-      }
-    } else {
+if (isset($_GET['registar'])) {
+  $_SESSION["erros"] = "password incorreta";
+  $typePage = 'register';
+} elseif (isset($_GET['login'])) {
+  $email = isset($_GET['email']) ? $_GET['email'] : '';
+  $_SESSION["email"] = $email;
+  $password = isset($_GET['password']) ? $_GET['password'] : '';
+  $resultatoUser = buscarUsers($email);
+  if ($resultatoUser) {
+    if(password_verify($password, $resultatoUser['senha'])){
+      $_SESSION['emailUser'] = $email;
+      $_SESSION['email'] = $email;
+      $typePage = 'produtos';
+      $_SESSION["erros"] = "";
+    }else{
       $_SESSION["erros"] = "password incorreta";
     }
+  } else {
+    $_SESSION["erros"] = "password incorreta";
   }
 }
 
@@ -98,25 +94,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
         <div class="profile-container">
         <?php
-          if (!empty($_SESSION['email'])) {
-            // Usuário logado
-            echo '<div class="profile-container">
-                    <i id="profile-icon" class="material-icons">account_circle</i>
-                    <div class="dropdown" id="dropdown">
-                        <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) . '</p>
-                        <a href="menu.php?logout=true" class="logout-button">Logout</a>
-                    </div>
-                  </div>';
-        } else {
-            // Usuário não logado
-            echo '<div class="profile-container">
-                    <i id="profile-icon" class="material-icons profile-icon">account_circle</i>
-                    <div class="dropdown" id="dropdown">
-                        <a href="menu.php" /*class="login-button"*/ >Login/Registrar</a>
-                    </div>
-                  </div>';
-        }
-        
+          $emailAuxiliar = isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '';
+          displayLogoutLogin($emailAuxiliar);
         ?>
       </div>
         <div class="menu-obscuro">
@@ -165,7 +144,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="main-menu">
       <div class="produtos">
         <?php 
-        displayMenu($typePage, $result);
+        $emailAuxiliar = isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '';
+        displayMenu($typePage, $result, $emailAuxiliar);
         ?>
       </div>
     </div>
