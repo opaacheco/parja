@@ -143,8 +143,7 @@ i#hamburguer {
   display: none;
   position: absolute;
   top: 32px;
-  right: 0;
-  background-color: white;
+  right: -70px;
   width: 200px;
   z-index: 1000;
 }
@@ -189,7 +188,6 @@ i#hamburguer {
 .login-button:hover {
   background-color: var(--bordo-color);
 }
-
 
 /*para telemovel*/
 

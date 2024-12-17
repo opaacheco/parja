@@ -34,6 +34,29 @@ session_start();
           </ul>
           <div class="linha"></div>
         </nav>
+        <div class="profile-container">
+        <?php
+          if (!empty($_SESSION['email'])) {
+            // Usuário logado
+            echo '<div class="profile-container">
+                    <i id="profile-icon" class="material-icons">account_circle</i>
+                    <div class="dropdown" id="dropdown">
+                        <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) . '</p>
+                        <a href="menu.php?logout=true" class="logout-button">Logout</a>
+                    </div>
+                  </div>';
+        } else {
+            // Usuário não logado
+            echo '<div class="profile-container">
+                    <i id="profile-icon" class="material-icons profile-icon">account_circle</i>
+                    <div class="dropdown" id="dropdown">
+                        <a href="menu.php" /*class="login-button"*/ >Login/Registrar</a>
+                    </div>
+                  </div>';
+        }
+        
+        ?>
+      </div>
         <div class="menu-obscuro">
           <i onclick="comutarMenu()" id="hamburguer" class="material-icons"
             >menu</i
@@ -136,6 +159,7 @@ session_start();
       <div class="container-hides">
         <div class="opcao-hide" onclick="openOpcaoForca()">
           <i id="flecha-forca" class="material-icons">arrow_forward</i>
+          
           <h1>Forças</h1>
         </div>
         <div id="explicacao-forca" class="forca-explicacao">

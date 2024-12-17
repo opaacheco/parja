@@ -70,11 +70,11 @@ function openOpcaoAmeacas() {
   }
 }
 
-const profileIcon = document.getElementById('profile-icon');
-const dropdown = document.getElementById('dropdown');
+const profileIcon = document.getElementById("profile-icon");
+const dropdown = document.getElementById("dropdown");
 
 if (profileIcon) {
-  profileIcon.addEventListener('click', () => {
-    dropdown.classList.toggle('active');  // Altera entre mostrar e esconder
+  profileIcon.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
   });
 }

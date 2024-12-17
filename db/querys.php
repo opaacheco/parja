@@ -19,7 +19,7 @@ function buscarUsers($email){
     return $resultatoUser;
 }
 
-function inserirUser($name, $email, $hashPass, $tipo_usuario){
+function inserirUser($name, $email, $hashPass){
     Global $pdo;
     $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES (:nome, :email, :senha, :tipo_usuario)");
     $tipo_usuario = 'usuario';
