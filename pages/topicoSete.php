@@ -1,6 +1,11 @@
 <?php
+
+include '../config/config.php';
+
 session_start();
+
 include '../components/menuComponents.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

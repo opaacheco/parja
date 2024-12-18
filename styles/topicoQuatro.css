@@ -1,76 +1,79 @@
 @import "Root.css";
 
 body {
-    color: #333;
-    background-color: #f9f9f9;
-    line-height: 1.6;
-  }
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
 
 main {
-    text-align: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .circle-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: conic-gradient(
-        #4b6e8a 0% 33%,  
-        #5b8a60 33% 66%, 
-        #8a4b4d 66% 100% 
-    );
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: conic-gradient(#4b6e8a 0% 33%, #5b8a60 33% 66%, #8a4b4d 66% 100%);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0;
 }
 
 .circle-container a {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 50%;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    font-weight: none;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    transition: text-decoration 0.3s ease;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: none;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  transition: text-decoration 0.3s ease;
 }
 
 .circle-container a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .section1 {
-    top: 12%;
-    left: 74%;
-    transform: translate(-50%, 0%);
+  top: 12%;
+  left: 74%;
+  transform: translate(-50%, 0%);
 }
 
 .section2 {
-    top: 38%;
-    left: 0%;
-    transform: translate(0%, -50%);
+  top: 38%;
+  left: 0%;
+  transform: translate(0%, -50%);
 }
 
 .section3 {
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .title {
-    font-weight: bold;
-    font-size: 1.8em;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    color: #444;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  color: #444;
 }
 
+@media (max-width: 915px) {
+  main {
+    max-width: 380px;
+    z-index: 2;
+  }
+}

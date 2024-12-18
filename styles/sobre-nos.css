@@ -33,9 +33,9 @@ body {
   }
 
   .main-sobre-nos p {
-    width: 350px;
+    width: 340px;
     text-align: justify;
     font-size: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 }

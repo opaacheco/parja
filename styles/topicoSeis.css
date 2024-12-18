@@ -30,7 +30,7 @@ main {
   }
 
   main > video {
-    width: 300px;
+    width: 380px;
     border-radius: 15px;
     margin-bottom: 60px;
   }

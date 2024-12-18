@@ -2,10 +2,10 @@
 
 /* Estilos básicos */
 body {
-    color: #333;
-    background-color: #f9f9f9;
-    line-height: 1.6;
-  }
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
 
 /* Conteúdo principal */
 main {
@@ -15,19 +15,21 @@ main {
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+
+  margin-top: 25px;
 }
 
 /* Estilizar o ícone */
 .back-icon {
-    width: 40px; 
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 /* Efeito ao passar o mouse */
 .back-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 main section {
@@ -40,10 +42,10 @@ main section:last-child {
   border-bottom: none;
 }
 
-main h2{
-    font-size: 1.8em;
-    color: #333;
-    margin: auto;
+main h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin: auto;
 }
 
 main h3 {
@@ -65,4 +67,11 @@ main ul li {
 
 main ul li strong {
   color: #555;
+}
+
+@media (max-width: 915px) {
+  .main-body {
+    margin-top: 25px;
+    max-width: 380px;
+  }
 }

@@ -1,6 +1,11 @@
 <?php
+
+include '../config/config.php';
+
 session_start();
+
 include '../components/menuComponents.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +90,7 @@ include '../components/menuComponents.php';
       </div>
     </header>
 
-    <main>
+    <main class="main-body">
       <header>
         <img
           src="../images/de-volta.png"

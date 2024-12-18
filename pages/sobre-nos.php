@@ -1,6 +1,10 @@
 <?php
+
+include '../config/config.php';
 session_start();
+
 include '../components/menuComponents.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +89,6 @@ include '../components/menuComponents.php';
     </header>
     <main class="main-sobre-nos">
       <div>
-        <img src="../images/bartender.jfif" alt="" />
         <p>
           Somos um trio de amigos que gosta de café e de passar o tempo a ouvir
           um bom jazz. Por isso, decidimos explorar esta ideia unindo ambos os

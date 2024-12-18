@@ -1,6 +1,11 @@
 <?php
+
+include '../config/config.php';
+
 session_start();
+
 include '../components/menuComponents.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +24,11 @@ include '../components/menuComponents.php';
   </head>
   <body>
     <header>
-      <div class="logo-slogan">
+    <div class="logo-slogan">
         <img src="../images/logo.png" alt="" />
         <h1 class="titulo">PARJA</h1>
         <p class="frase">o som que atrai e o sabor que conquista</p>
       </div>
-
       <div class="opcoes">
         <nav>
           <ul>
@@ -40,7 +44,6 @@ include '../components/menuComponents.php';
           $emailAuxiliar = isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '';
           displayLogoutLogin($emailAuxiliar);
         ?>
-      </div>
       </div>
         <div class="menu-obscuro">
           <i onclick="comutarMenu()" id="hamburguer" class="material-icons"

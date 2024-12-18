@@ -1,6 +1,11 @@
 <?php
+
+include '../config/config.php';
+
 session_start();
+
 include '../components/menuComponents.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -85,7 +90,7 @@ include '../components/menuComponents.php';
       <div class="hero">
         <h1 id="hum">Bem-Vindo!</h1>
         <p id="p">Venha desfrutar da melhor experiência de café da cidade.</p>
-        <button id="btn"><a href="./sobre-nos.html">Sobre nós</a></button>
+        <button id="btn"><a href="./sobre-nos.php">Sobre nós</a></button>
       </div>
       <!--
       <div class="vinyl-container">
