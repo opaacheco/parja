@@ -57,6 +57,6 @@ Parte 2:
 
 ##
 1. Link do site:
-   http://parja.rf.gd/parja/pages/home.html  
+   http://parja.rf.gd/parja/pages/home.php  
 2. Link da nossa playlist:
-   [http://parja.rf.gd/parja/pages/playlist.html](https://open.spotify.com/playlist/0q1M2aOPIVUkc0kfpnweOn?)
+   [http://parja.rf.gd/parja/pages/playlist.php](https://open.spotify.com/playlist/0q1M2aOPIVUkc0kfpnweOn?)
