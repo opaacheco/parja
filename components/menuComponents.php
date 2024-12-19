@@ -4,7 +4,7 @@ function displayLogoutLogin($emailAuxiliar){
   if ($emailAuxiliar) {
     // Usuário logado
       echo '<div class="profile-container">
-              <i id="profile-icon" class="material-icons">account_circle</i>
+              <i id="profile-icon" class="material-icons profile-icon">account_circle</i>
               <div class="dropdown" id="dropdown">
               <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) .'</p>
               <a><i id="cart-icon" class="material-icons">shopping_cart</i></a>
