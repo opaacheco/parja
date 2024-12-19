@@ -1,0 +1,50 @@
+@import "Root.css";
+
+body {
+  background-color: #f9f9f9;
+}
+
+.main-menu {
+  text-align: center;
+  background-color: #fff;
+  width: 1400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.produtos-singular > button {
+  background-color: var(--bordo-claro-color);
+  width: 200px;
+  color: var(--pastel-color);
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+.estoque {
+  color: green;
+}
+
+.produtos-singular h1 {
+  color: var(--bordo-claro-color);
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.descricao {
+  margin-bottom: 5px;
+}
+
+.produtos-singular img {
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+#cart-icon {
+  color: #fff;
+  margin: 5px;
+}

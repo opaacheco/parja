@@ -30,4 +30,14 @@ function inserirUser($name, $email, $hashPass){
     $stmt->execute();
 }
 
+function srcSingularProdutct($produto_id){
+    Global $pdo;
+    $stmt = $pdo->prepare("SELECT id, nome, preco, foto_url, descricao, categoria, estoque FROM produtos WHERE id = :id");
+    $stmt->bindParam(':id', $produto_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $singularProduct = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $singularProduct;
+}
+
+
 ?>

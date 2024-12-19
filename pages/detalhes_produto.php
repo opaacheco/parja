@@ -5,6 +5,7 @@ include '../config/config.php';
 session_start();
 
 include '../db/connectDB.php';
+include '../db/querys.php';
 include '../components/menuComponents.php';
 include '../components/nav.php';
 include '../components/footer.php';
@@ -12,37 +13,31 @@ include '../components/footer.php';
 $email = "";
 $typePage = "";
 
-echo"<pre>";
-print_r($_SESSION["email"]);
-echo"</pre>";
-
 $pdo = connectDB();
 $sql = "SELECT id, nome, preco, foto_url FROM produtos";
 $stmt = $pdo->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// dá get, busca, o id do produto
 if (isset($_GET['id'])) {
     $produto_id = $_GET['id'];
 } else {
     die("ID não fornecido.");
 }
 
-// esta função serve para exibir um produto
-function displayOneProduto($pdo, $produto_id) {
+function displayOneProduto($produto_id) {
     try {
-        $stmt = $pdo->prepare("SELECT id, nome, preco, foto_url FROM produtos WHERE id = :id");
-        $stmt->bindParam(':id', $produto_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($row) {
-            echo "<div>";
-            echo "<h1>" . htmlspecialchars($row["nome"]) . "</h1>";
-            echo "<img src='../" . htmlspecialchars($row["foto_url"]) . "' alt='Imagem do Produto' width='200'/><br>";
-            echo "<input type='hidden' name='" . htmlspecialchars($row["preco"]) . "'>";
-            echo "<h2>€" . htmlspecialchars($row["preco"]) . "</h2>";
-            echo "<button>adicionar</button>";
+        $singularProduct = srcSingularProdutct($produto_id);
+        if ($singularProduct) {
+            echo "<div class='produtos-singular'>";
+            echo "<h1>" . htmlspecialchars($singularProduct["nome"]) . "</h1>";
+            echo "<img src='../" . htmlspecialchars($singularProduct["foto_url"]) . "' alt='Imagem do Produto' width='200'/><br>";
+            echo "<input type='hidden' name='" . htmlspecialchars($singularProduct["preco"]) . "'>";
+            echo "<p>€" . htmlspecialchars($singularProduct["preco"]) . "</p>";
+            if($singularProduct["estoque"]>0){
+              echo "<p class='estoque'>disponível</p>";
+            }
+            echo "<p class='descricao'>" . htmlspecialchars($singularProduct["descricao"]) . "</p>";
+            echo "<button><i id='cart-icon' class='material-icons'>add_shopping_cart</i></button>";
             echo "</div>";   
         } else {
             echo "<h2>Produto não encontrado.</h2>";
@@ -68,7 +63,7 @@ $emailAuxiliar = isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '';
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/detalhes.css" />
     <title>Menu</title>
   </head>
 
@@ -77,7 +72,7 @@ $emailAuxiliar = isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '';
       navBar($emailAuxiliar)
     ?>
     <div class="main-menu">
-        <?= displayOneProduto($pdo, $produto_id)?>    
+        <?= displayOneProduto($produto_id)?>    
     </div>    
     <?php 
       footerBar()

@@ -148,6 +148,11 @@ i#hamburguer {
   z-index: 1000;
 }
 
+.dropdown a {
+  width: 200px;
+  height: 45px;
+}
+
 .dropdown.active {
   display: block;
 }

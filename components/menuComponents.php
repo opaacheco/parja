@@ -6,7 +6,8 @@ function displayLogoutLogin($emailAuxiliar){
       echo '<div class="profile-container">
               <i id="profile-icon" class="material-icons">account_circle</i>
               <div class="dropdown" id="dropdown">
-              <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) . '</p>
+              <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) .'</p>
+              <a><i id="cart-icon" class="material-icons">shopping_cart</i></a>
               <a href="menu.php?logout=true" class="logout-button">Logout</a>
               </div>
               </div>';
@@ -49,7 +50,7 @@ function displayMenu($typePage, $result, $emailAuxiliar){
                   <img src='../$fotoUrl' alt='Imagem do Produto' width='200'/><br>
                   <input type='hidden' name='$id'>
                   <h2>€$preco</h2>
-                  <button>adicionar</button>
+                  <button>detalhes</button>
                 </div>
               HTML;
             }
@@ -90,25 +91,5 @@ function displayMenu($typePage, $result, $emailAuxiliar){
         echo "</div>";
       }
 }
-
-function logout(){
-  echo <<<HTML
-  <div>
-  <button>logout</button>
-  </div>
-  HTML;
-}
-
-function addProdutos(){}
-// echo <<<HTML
-// <div class='produto' onclick="window.location.href='detalhes_produto.php?id=$id'">
-//   <h1>$nome</h1>
-//   <img src='../$fotoUrl' alt='Imagem do Produto' width='200'/><br>
-//   <input type='hidden' name='$id'>
-//   <h2>€$preco</h2>
-//   <button>adicionar</button>
-// </div>
-// HTML;
-
 
 ?>
