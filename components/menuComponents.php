@@ -7,7 +7,7 @@ function displayLogoutLogin($emailAuxiliar){
               <i id="profile-icon" class="material-icons profile-icon">account_circle</i>
               <div class="dropdown" id="dropdown">
               <p><strong>Email:</strong> ' . htmlspecialchars($_SESSION['email']) .'</p>
-              <a><i id="cart-icon" class="material-icons">shopping_cart</i></a>
+              <a href="carrinho.php"><i id="cart-icon" class="material-icons">shopping_cart</i></a>
               <a href="menu.php?logout=true" class="logout-button">Logout</a>
               </div>
               </div>';
