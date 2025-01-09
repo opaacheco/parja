@@ -22,6 +22,10 @@ if (isset($_GET['logout'])) {
   $_SESSION['emailUser'] = '';
 }
 
+if (!isset($_SESSION['carrinho'])){
+  $_SESSION['carrinho'] = [];
+}
+
 if (isset($_GET['registarBD'])) {
   $name = isset($_GET['name']) ? $_GET['name'] : '';
   $email = isset($_GET['email']) ? $_GET['email'] : '';

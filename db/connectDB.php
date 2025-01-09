@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root"; 
-$password = "root";
-$dbname = "lolja"; 
+$password = "root123";
+$dbname = "parja"; 
 /*
 $servername = "sql310.infinityfree.com";
 $username = "if0_37797726"; 
