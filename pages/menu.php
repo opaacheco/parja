@@ -20,6 +20,11 @@ $result = buscarProdutos();
 
 if (isset($_GET['logout'])) {
   $_SESSION['emailUser'] = '';
+  $_SESSION['carrinho'] = [];
+}
+
+if (!isset($_SESSION['carrinho'])){
+  $_SESSION['carrinho'] = [];
 }
 
 if (isset($_GET['registarBD'])) {

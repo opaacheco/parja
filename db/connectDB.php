@@ -1,10 +1,5 @@
 <?php
-/*
-$servername = "localhost";
-$username = "root"; 
-$password = "root";
-$dbname = "lolja"; 
-*/
+
 $servername = "sql310.infinityfree.com";
 $username = "if0_37797726"; 
 $password = "6XXxkI87k6HHkv";
